@@ -13,9 +13,9 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars 
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
-    await alive.edit("`░█─░█ █▀▀ █── █── █▀▀█ 
-░█▀▀█ █▀▀ █── █── █──█ 
-░█─░█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ `\n\n`🔺Telethon version:6.9.0`\n`🔻Python version:3.7.1`\n`∆◆∆Bot version:1.1.2`\n\n\n"
+    await alive.edit("`░█─░█ █▀▀ █── █── █▀▀█ `"
+"                     `░█▀▀█ █▀▀ █── █── █──█ `"
+"                     `░█─░█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ `\n\n`🔺Telethon version:6.9.0`\n`🔻Python version:3.7.1`\n`∆◆∆Bot version:1.1.2`\n\n\n"
                      f"⬛️◼️◾️`My owner`: {DEFAULTUSER}\n⬜️◻️◽️`channel`:@crackedapps_obsq\n\n"
                      "`Bot name:obsqofficial_bot`\n\n`🔸fork by:` @obsquriel\n\n"
                      "🔸`Database Status: Databases functioning normally!\n\nAlways with you, my master!\n`\n"
