@@ -1,6 +1,6 @@
 ## Mandatory Imports
 ```python3
-None
+New plugins on the way...
 ```
 There is None Mandatory Imports. Because Var, bot and command are already automatically imported.
 
