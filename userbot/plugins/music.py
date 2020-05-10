@@ -23,7 +23,7 @@ def bruh(name):
     os.system("instantmusic -q -s "+name)
     
 
-@borg.on(admin_cmd(pattern="song ?(.*)"))
+@borg.on(admin_cmd(pattern="!song"))
 async def _(event):
     if event.fwd_from:
         return
@@ -33,7 +33,7 @@ async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
-    await event.edit("ok finding the song")    
+    await event.edit("`kyne :`Ok finding the song...")    
     bruh(str(cmd))
     l = glob.glob("*.mp3")
     loa = l[0]
