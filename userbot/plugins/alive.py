@@ -14,7 +14,7 @@ DEFAULTUSER = str(KYNE_NAME) if KYNE_NAME else "obsq"
 async def amireallyalive(alive):
     """ For !kyne command, check if the bot is running.  """
     await alive.edit("kyne mode on!!\n\n`⋙⋙kyne version:1.1.2`\n"
-                     f"`My owner`: {DEFAULTUSER}\n"
+                     f"`⋙⋙My owner`: {DEFAULTUSER}\n"
                      "➳➳`Database Status: Databases functioning normally!`\n\n"
                      "[Made with love❤️](https://t.me/obsquriel)")
                      
