@@ -3,21 +3,18 @@ import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 from platform import uname
-from userbot import ALIVE_NAME
+from userbot import KYNE_NAME
 from userbot.utils import admin_cmd
 
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+DEFAULTUSER = str(KYNE_NAME) if KYNE_NAME else "obsq"
 
-#@command(outgoing=True, pattern="^.alive$")
-@borg.on(admin_cmd(pattern=r"alive"))
+#@command(outgoing=True, pattern="^!kyne$")
+@borg.on(admin_cmd(pattern=r"!kyne"))
 async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
-    await alive.edit("`░█─░█ █▀▀ █── █── █▀▀█ `"
-"                     `░█▀▀█ █▀▀ █── █── █──█ `"
-"                     `░█─░█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ `\n\n`⋙⋙Telethon version:6.9.0`\n`⋙⋙Python version:3.7.1`\n`⋙⋙Bot version:1.1.2`\n\n"
-                     f"▓▓`My owner`: {DEFAULTUSER}\n▒▒`channel`:@crackedapps_obsq\n"
-                     "░░`Bot name:obsqofficial_bot`\n\n`➳➳fork by:`@obsquriel\n\n"
-                     "➳➳`Database Status: Databases functioning normally!\n`\n"
-                     "[DEPLOY THIS USERBOT NOW](https://github.com/obsq/obsquserbot.git)")
+    """ For !kyne command, check if the bot is running.  """
+    await alive.edit("kyne mode on!!\n\n`⋙⋙kyne version:1.1.2`\n"
+                     f"`My owner`: {DEFAULTUSER}\n"
+                     "➳➳`Database Status: Databases functioning normally!`\n\n"
+                     "[Made with love❤️](https://t.me/obsquriel)")
                      
