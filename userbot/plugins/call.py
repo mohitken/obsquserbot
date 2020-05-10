@@ -13,7 +13,7 @@ from userbot.utils import admin_cmd
 
 
 
-@borg.on(admin_cmd(pattern=r"call"))
+@borg.on(admin_cmd(pattern=r"!call"))
 
 async def _(event):
 
