@@ -1,11 +1,11 @@
 """Get Detailed info about any message
-Syntax: .obsq"""
+Syntax: .msginfo"""
 from telethon import events
 import io
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("obsq"))
+@borg.on(admin_cmd("!msginfo"))
 async def _(event):
     if event.fwd_from:
         return
