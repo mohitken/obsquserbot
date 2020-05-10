@@ -1,5 +1,5 @@
 """ It does not do to dwell on dreams and forget to live
-Syntax: .getime"""
+Syntax: !gtime/!time"""
 
 import asyncio
 import os
@@ -11,7 +11,7 @@ from userbot.utils import admin_cmd
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 
-@borg.on(admin_cmd("time ?(.*)"))  # pylint:disable=E0602
+@borg.on(admin_cmd("!time"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -36,19 +36,19 @@ async def _(event):
     await borg.send_file(  # pylint:disable=E0602
         event.chat_id,
         required_file_name,
-        caption="Userbot: Powered by @crackedapps_obsq",
+        caption="`kyne :`None of a kind",
         # Courtesy: @obsquriel
         reply_to=reply_msg_id
     )
     os.remove(required_file_name)
     end = datetime.now()
     time_taken_ms = (end - start).seconds
-    await event.edit("Created sticker in {} seconds".format(time_taken_ms))
+    await event.edit("`kyne :`Created sticker in {} seconds".format(time_taken_ms))
     await asyncio.sleep(5)
     await event.delete()
 
 
-@borg.on(admin_cmd("gtime (.*)"))  # pylint:disable=E0602
+@borg.on(admin_cmd("!gtime"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
