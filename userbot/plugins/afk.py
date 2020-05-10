@@ -1,10 +1,15 @@
 """AFK Plugin for @UniBorg
-Syntax: .afk REASON"""
+Syntax: !afk REASON"""
 import asyncio
 import datetime
+from userbot import KYNE_NAME
 from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
+
+
+
+DEFAULTUSER = str(KYNE_NAME) if KYNE_NAME else "obsq"
 
 
 global USER_AFK  # pylint:disable=E0602
@@ -18,7 +23,7 @@ last_afk_message = {}
 afk_start = {}
 
 
-@borg.on(events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True))  # pylint:disable=E0602
+@borg.on(events.NewMessage(pattern=r"\!afk ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -128,7 +133,7 @@ async def on_afk(event):
             time %= 60
             seconds = time
             if days == 1:
-                afk_since = "**Yesterday**"
+                afk_since = "'Yesterday'"
             elif days > 1:
                 if days > 6:
                     date = now + \
@@ -139,16 +144,16 @@ async def on_afk(event):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` **ago**"
+                afk_since = f"'{int(hours)}h{int(minutes)}m'"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` **ago**"
+                afk_since = f"'{int(minutes)}m{int(seconds)}s'"
             else:
-                afk_since = f"`{int(seconds)}s` **ago**"
+                afk_since = f"'{int(seconds)}s'"
         msg = None
-        message_to_reply = f"__My Master Has Been Gone For__ `{total_afk_time}`\nWhere He Is: ~~ONLY GOD KNOWS~~ " + \
-            f"\n\n__I promise I'll back in a few light years__\n**REASON**: {reason}" \
+        message_to_reply = f"`kyne :`{DEFAULTUSER} has been gone for about {total_afk_time}\
+            f"\n\n**REASON**: {reason}" \
             if reason \
-            else f"**Heya!**\n__I am currently unavailable. Since when, you ask? For {total_afk_time} I guess.__\n\nWhen will I be back? ~~Soon~~ __Whenever I feel like it__**( ಠ ʖ̯ ಠ)**  "
+            else f"`kyne :`{DEFAULTUSER} has been gone for about {total_afk_time}."
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
